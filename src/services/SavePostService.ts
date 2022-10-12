@@ -22,6 +22,6 @@ export class SavePostService {
     }
 
     async execute (post = new Post): Promise<Post> {
-        return await this.postRepository.save(post)
+        return await this.postRepository.save(this.post)
     }
 }
