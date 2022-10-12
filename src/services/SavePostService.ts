@@ -1,5 +1,5 @@
-import { getCustomRepository } from "typeorm";
-import { Post } from "../entities/Post";
+import { getCustomRepository } from 'typeorm';
+import { Post } from '../entities/Post';
 import { PostRepository } from "../repositories/PostRepository";
 
 interface ISavePostService {
@@ -21,7 +21,7 @@ export class SavePostService {
         this.post = new Post(author, content)
     }
 
-    async execute (post: Post): Promise<Post> {
-        return await this.postRepository.save(this.post)
+    async execute (post = new Post): Promise<Post> {
+        return await this.postRepository.save(post)
     }
 }
