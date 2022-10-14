@@ -1,10 +1,8 @@
 module.exports = {
   type: 'sqlite',
-  database: process.env.PORT === 5001 ? './src/database/database.test.sqlite' : './src/database/database.sqlite',
+  database: './src/database/database.test.sqlite',
   entities: [
-    process.env.PORT === 5001
-      ? 'src/entities/*.ts'
-      : 'build/entities/*.js'
+    'src/entities/*.ts'
   ],
   migrations: [
     process.env.PORT === 5001

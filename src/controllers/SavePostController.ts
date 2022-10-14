@@ -4,6 +4,7 @@ import { SavePostService } from "../services/SavePostService";
 
 export class SavePostController {
     async handle(request: Request, response: Response): Promise<Response> {
+        console.log(request.body)
         const { author, content } = request.body
 
         if (content.length === 0) {
